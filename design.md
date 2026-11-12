@@ -71,7 +71,7 @@ Màu trạng thái success/error/warning chỉ dùng cho trạng thái tương �
 
 ### Header
 
-- Wordmark HyperData Lab, không gắn badge JSM cạnh logo. Logo image: 34x34 px; wordmark: 19 px. Favicon uses a tight crop from assets/app_logo.png to fill the tab icon.
+- Wordmark HyperData Lab, không gắn badge JSM cạnh logo. Logo image: 34x34 px; wordmark: 19 px. Favicon is a local copy of https://hyperdatalab.org/favicon.ico.
 - Điều hướng: Tính năng, Cách hoạt động, Tải ứng dụng, Hỏi đáp.
 - CTA chính “Tải cho Windows”.
 - Mobile: luôn hiện chữ HyperData Lab; menu Sheet trượt vào bằng Motion và CTA tải vẫn nhìn thấy rõ.
