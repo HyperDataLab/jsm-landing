@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetClose, SheetContent, SheetDismiss, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { jsmWindowsDownloadUrl } from "@/lib/release"
 
 const links = [
   { label: "nav.features", href: "#tinh-nang" },
@@ -103,7 +104,7 @@ export function FloatingNavbar() {
         </div>
         <div className="hidden items-center gap-2 md:flex">
           <LanguagePicker />
-          <a href="#tai-ung-dung"><Button size="sm"><ArrowDownTrayIcon /> {t("nav.downloadWindows")}</Button></a>
+          <a href={jsmWindowsDownloadUrl} target="_blank" rel="noreferrer"><Button size="sm"><ArrowDownTrayIcon /> {t("nav.downloadWindows")}</Button></a>
         </div>
         <Sheet>
           <SheetTrigger asChild><Button size="icon" variant="ghost" className="md:hidden" aria-label={t("nav.openMenu")}><Bars3Icon className="size-5" /></Button></SheetTrigger>
@@ -112,7 +113,7 @@ export function FloatingNavbar() {
             <SheetTitle className="mb-8 mt-2 text-lg font-extrabold text-ink"><Brand /></SheetTitle>
             <div className="flex flex-col gap-2">
               {links.map((link) => <SheetClose key={link.href} asChild><a href={link.href} className="rounded-xl px-3 py-3 text-sm font-semibold text-secondary transition hover:bg-surface-soft hover:text-ink">{t(link.label)}</a></SheetClose>)}
-              <SheetClose asChild><a href="#tai-ung-dung" className="mt-3"><Button className="w-full"><ArrowDownTrayIcon /> {t("nav.downloadJsm")}</Button></a></SheetClose>
+              <SheetClose asChild><a href={jsmWindowsDownloadUrl} target="_blank" rel="noreferrer" className="mt-3"><Button className="w-full"><ArrowDownTrayIcon /> {t("nav.downloadJsm")}</Button></a></SheetClose>
               <div className="mt-5 border-t border-border pt-5">
                 <p className="mb-3 text-xs font-bold text-secondary">{t("nav.chooseLanguage")}</p>
                 <LanguagePicker />

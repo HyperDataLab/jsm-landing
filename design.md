@@ -92,9 +92,9 @@ Một card trắng nổi bật ngay trong hero hoặc ngay sau hero:
 - Định dạng gói, phiên bản, ngày phát hành và dung lượng.
 - Nút tải liên kết đến URL public của bản phát hành hiện hành.
 - Link hướng dẫn cài đặt và checksum nếu bản phát hành có cung cấp.
-- Nếu chưa có URL public, trạng thái nút là “Bản tải sắp có”; không gắn href giả hoặc đường dẫn máy local.
+- Nút tải trỏ mặc định tới bản Windows x64 mới nhất tại GitHub Releases: https://github.com/HyperDataLab/jsm-landing/releases/latest/download/JSM-Setup.exe. Có thể ghi đè bằng VITE_JSM_WINDOWS_DOWNLOAD_URL khi cần URL HTTPS theo phiên bản; không dùng đường dẫn máy local.
 
-Build hiện có archive Windows x64 trong thư mục build của jsm-fe, nhưng đó là file cục bộ. Workflow CI hiện build Windows app và chưa có bước upload release asset. Chỉ bật CTA sau khi có URL phát hành ổn định. Không hiển thị các nền tảng chưa có artifact xác nhận.
+Workflow .github/workflows/release-windows.yml tạo installer JSM-Setup.exe và đính kèm vào release trong repo HyperDataLab/jsm-landing. Link latest chỉ tải được sau khi maintainer publish release; giữ các CTA trỏ vào endpoint ổn định này. Không hiển thị các nền tảng chưa có artifact xác nhận.
 
 ### Tính năng
 
@@ -180,7 +180,7 @@ Tài liệu: [Aceternity UI components](https://ui.aceternity.com/components) ·
 
 - Trang giới thiệu đúng app HyperData Lab JSM và khả năng kiểm tra bản thảo/gợi ý tạp chí.
 - Màu sắc khớp screenshot và AppColors hiện có.
-- CTA Windows chỉ hoạt động khi release URL đã cấu hình; không có link tải giả.
+- CTA Windows dùng URL latest release công khai làm mặc định; VITE_JSM_WINDOWS_DOWNLOAD_URL cho phép ghi đè khi cần. Không có link tải giả.
 - Không hiển thị nền tảng chưa có artifact phát hành.
 - Nội dung package, quyền riêng tư, version và checksum được xác minh trước khi công khai.
 - Aceternity dùng cho hiệu ứng chọn lọc; shadcn/ui dùng cho primitive và tương tác.
@@ -190,7 +190,7 @@ Tài liệu: [Aceternity UI components](https://ui.aceternity.com/components) ·
 - Hero: Aceternity Spotlight màu xanh dương nhẹ, kết hợp lưới nền mờ.
 - Primitive tương tác theo cấu trúc shadcn/ui: Button, Card, Badge, Accordion và Sheet; hàm cn() dùng clsx cùng tailwind-merge.
 - Chuyển động dùng Motion; giao diện tôn trọng prefers-reduced-motion.
-- Nút tải Windows chỉ liên kết tới URL public qua VITE_JSM_WINDOWS_DOWNLOAD_URL; khi chưa cấu hình, nút hiển thị trạng thái “Bản tải Windows sắp có”.
+- Mọi nút tải Windows, gồm hero, navbar desktop/mobile và download panel, trỏ tới URL public HTTPS; URL latest release dùng làm mặc định.
 
 ## 11. Ngôn ngữ, icon và hover
 
