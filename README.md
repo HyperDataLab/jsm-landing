@@ -6,7 +6,7 @@ Landing page React + TypeScript for the Windows desktop release of JSM.
 Run npm install, then npm run dev.
 
 ## Public download link
-Copy .env.example to .env.local to use the stable latest-release download URL. The link resolves after a maintainer publishes a release; draft releases are not public downloads. You can set VITE_JSM_WINDOWS_DOWNLOAD_URL to a version-specific public HTTPS release URL if needed. Do not point it at a local build archive.
+The landing page uses the stable latest published release URL by default. Set VITE_JSM_WINDOWS_DOWNLOAD_URL to a version-specific public HTTPS release URL only when needed. Do not point it at a local build archive.
 
 ## Stack
 - Vite, React and TypeScript
